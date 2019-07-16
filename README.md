@@ -33,6 +33,45 @@ b) Write a method inside `Shape` that returns how many sides the shape has. Then
 
 c) Re-write `Shape` so that each case has an associated value of type Int that will represent the length of the sides (assume the shapes are regular polygons so all the sides are the same length) and write a method inside that returns the perimeter of the shape.
 
+```swift
+enum Shape{
+case triangle(inches: Int)
+case rectangle(inches: Int)
+case square(inches: Int)
+case hexagon(inches: Int)
+case pentagon(inches: Int)
+
+func numberOfSides() -> Int{
+    switch self {
+    case .triangle:
+        return 3
+    case .square:
+        return 4
+    case .rectangle:
+        return 4
+    case .pentagon:
+        return 5
+    case .hexagon:
+        return 6
+    }
+}
+func perimeter() -> Int {
+    switch self {
+        case let .triangle(inches):
+            return numberOfSides() * inches
+        case let .square(inches):
+            return numberOfSides() * inches
+        case let .rectangle(inches):
+            return numberOfSides() * inches
+        case let .pentagon(inches):
+            return numberOfSides() * inches
+        case let .hexagon(inches):
+            return numberOfSides() * inches
+        }
+    }
+}
+
+```
 
 ## Question 3
 
